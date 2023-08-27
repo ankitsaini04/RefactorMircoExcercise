@@ -1,9 +1,10 @@
-﻿using Moq;
-using NUnit.Framework;
+using Moq;
+using TDDMicroExercises.TirePressureMonitoringSystem;
 
-namespace TDDMicroExercises.TirePressureMonitoringSystem.Test
+namespace UnitTesting.TirePressureMonitoringSystem.Test
 {
     //Testing the Alarm class using mock implementation of Sensor
+
     [TestFixture]
     public class AlarmTest
     {
@@ -11,7 +12,7 @@ namespace TDDMicroExercises.TirePressureMonitoringSystem.Test
         public void Check_WhetherAlarmOnWhenPressureBelowLowThreshold()
         {
             var mockSensor = new Mock<ISensor>();
-            mockSensor.Setup(sensor => sensor.PopNextPressurePsiValue()).Returns(15); 
+            mockSensor.Setup(sensor => sensor.PopNextPressurePsiValue()).Returns(15);
             var alarm = new Alarm(mockSensor.Object);
 
             alarm.Check();
@@ -23,7 +24,7 @@ namespace TDDMicroExercises.TirePressureMonitoringSystem.Test
         public void Check_WhetherAlarmOnWhenPressureAboveHighThreshold()
         {
             var mockSensor = new Mock<ISensor>();
-            mockSensor.Setup(sensor => sensor.PopNextPressurePsiValue()).Returns(22); 
+            mockSensor.Setup(sensor => sensor.PopNextPressurePsiValue()).Returns(22);
             var alarm = new Alarm(mockSensor.Object);
 
             alarm.Check();

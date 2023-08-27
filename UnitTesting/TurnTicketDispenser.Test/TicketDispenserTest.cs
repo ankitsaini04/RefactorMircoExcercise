@@ -1,7 +1,7 @@
 ﻿using Moq;
-using NUnit.Framework;
+using TDDMicroExercises.TurnTicketDispenser;
 
-namespace TDDMicroExercises.TurnTicketDispenser.Test
+namespace UnitTesting.TurnTicketDispenser.Test
 {
     //Testing the TicketDispenser class using mock implementation of ITurnNumberSource
 
@@ -72,6 +72,5 @@ namespace TDDMicroExercises.TurnTicketDispenser.Test
 
             Assert.That(ticket1.TurnNumber, Is.Not.EqualTo(ticket2.TurnNumber));
         }
-
     }
 }
